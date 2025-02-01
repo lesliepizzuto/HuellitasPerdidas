@@ -1,0 +1,473 @@
+*{
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos Mobile-First */
+
+body{
+    background-color: #fffefe;
+}
+
+@media (max-width: 768px) {
+    /* Mostrar botón hamburguesa en móviles */
+    .hamburguer {
+        display: block;
+    }
+
+    /* Ocultar el menú en móviles hasta que se active */
+    .nav_links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: white;
+        width: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    /* Mostrar menú cuando se activa */
+    .nav_links.active {
+        display: flex;
+    }
+
+    /* Estilos de los enlaces en móviles */
+    .nav_links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Botón Donar ocupa todo el ancho en móviles */
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .info{
+        position: relative;
+        width: 100vw;
+        height: 60vh; 
+        background: url('../img/inicio.jpg') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        padding: 20px;
+        margin-top: 60px; 
+    }
+
+    .info::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Oscurece el fondo sin afectar el texto */
+        z-index: 1;
+    }
+
+    .info_contenido{
+        position: relative;
+        z-index: 2;
+        max-width: 90%;
+    }
+
+    .btn{
+        width: 80%;
+        text-align: center;
+    }
+}
+
+.navbar{
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+    height: 50px;
+    margin-right: 10px;
+}
+
+@media (min-width: 1024px) {
+    /* Ocultar el botón hamburguesa en escritorio */
+    .hamburguer {
+        display: none;
+    }
+
+    /* Mostrar el menú de navegación en fila */
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        position: static; /* Quitar posición absoluta usada en móviles */
+        background: none;
+        width: auto;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    /* Espaciado y alineación en escritorio */
+    .nav_links li {
+        margin: 0 15px;
+    }
+
+    .nav_links a {
+        font-size: 18px;
+        padding: 10px 15px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .info{
+        height: 100vh; 
+        justify-content: flex-start; 
+        padding-left: 10%;
+        text-align: left;
+    }
+
+    .info_contenido{
+        max-width: 600px;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+/*.image{
+    position: relative;
+    height: 80vh;
+    background: url(/img/inicio.jpg) center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+
+.info {
+    max-width: 400px;
+}*/
+
+.btn{
+    background-color: #d3b3f0;
+    color: white;
+    border-radius: 20px;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px;
+}
+
+.info{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('../img/inicio.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.info_contenido{
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+h2 {
+    margin-top: 10px;
+    color: #222;
+}
+
+
+/* ESTILO DESTKOP HOME */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav_links {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.nav_links li {
+    font-size: 18px;
+}
+
+.nav_links a {
+    text-decoration: none;
+    color: #333;
+    padding: 15px 10px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.nav_links a:hover {
+    color: #7a69af;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+.image {
+    height: 80vh; 
+    justify-content: flex-start;
+    padding-left: 10%;
+    text-align: left;
+}
+
+.info {
+    max-width: 500px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+.nosotros{
+    padding: 40px 10%;
+}
+
+.grid-nosotros{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* MEDIA QUERY: Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .info{
+        height: 90vh;
+        justify-content: flex-start;
+        padding-left: 10%;
+        text-align: left;
+    }
+}
+
+.titulo {
+    font-size: 36px;
+    text-align: center;
+    color: #8575a3;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.contenedor_nosotros {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.contenido_nosotros{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.seccion_nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 2px solid #ccc;
+}
+
+.seccion_nosotros h4 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.seccion_nosotros p {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-bottom: 10px;
+}
+
+.adopcion{
+    padding: 20px;
+}
+
+.subtitulo {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.boton {
+    background-color: transparent;
+    border: 2px solid #7a69af;
+    color: #7a69af;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.grid-adopcion {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tarjeta {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.tarjeta h4 {
+    font-size: 20px;
+    color: #7a69af;
+}
+
+.tarjeta p {
+    font-size: 14px;
+    color: #555;
+}
+
+
+.card_info {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card_info h4 {
+    color: #7a69af;
+    font-weight: bold;
+}
+
+.mensaje_final {
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+}
+
+.contedor{
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.grid_ayuda{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card_ayuda{
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.icono_ayuda{
+    flex: 0 0 80px;
+    margin-right: 20px;
+}
+
+.icono img{
+    width: 100%;
+    border-radius: 50%;
+    background-color: #e4d5f5;
+    padding: 10px;
+}
+
+.contenido_ayuda{
+    flex: 1;
+}
+
+.boton_ayuda {
+    background-color: transparent;
+    border: 2px solid #7a69af;
+    color: #7a69af;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .tarjeta {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+button{
+    color:rgb(175, 101, 244)
+}
+
+footer{
+    color: rgb(143, 188, 165);
+    font-size: large;
+    text-align: center;
+}
+
+.logo{
+    size: 0vmin;
+}
+
+
